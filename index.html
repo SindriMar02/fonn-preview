@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="is">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Línleiga, þvottur og fatahreinsun hjá Fönn á Kletthálsi í Reykjavík.">
+  <title>Fönn — Þvottahús og efnalaug</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+  <div class="intro" aria-hidden="true">
+    <div class="intro-mark">
+      <img src="assets/fonn.png" width="82" height="54" alt="">
+      <span class="intro-line"></span>
+    </div>
+  </div>
+  <script>
+    if (!location.hash && history.scrollRestoration &&
+        performance.getEntriesByType('navigation')[0]?.type === 'navigate') {
+      document.documentElement.classList.add('intro-entry');
+    }
+  </script>
+  <a class="skip" href="#main">Fara í efni</a>
+  <header class="mast">
+    <div class="mast-inner">
+      <a class="mark" href="./" aria-label="Fönn, forsíða"><img src="assets/fonn.png" width="62" height="41" alt="Fönn"></a>
+      <nav id="menu" aria-label="Aðalvalmynd">
+        <a href="#fyrirtaeki">Fyrirtæki</a>
+        <a href="#verdskra">Verðskrá</a>
+        <a href="#heimsokn">Opnunartímar</a>
+      </nav>
+      <a class="mast-call" href="tel:+3545106300">510 6300</a>
+      <button class="menu-toggle" type="button" aria-label="Opna valmynd" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="opening" aria-labelledby="heading">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="label">Þvottahús og efnalaug í Reykjavík</p>
+          <h1 id="heading"><span><b>Fannhvítt</b></span><span><b>frá Fönn.</b></span></h1>
+          <p class="hero-description">Línleiga og þvottur fyrir fyrirtæki. Fatahreinsun fyrir þig.</p>
+        </div>
+        <figure class="hero-material">
+          <img src="assets/linen.jpg" width="360" height="146" alt="Samanbrotið hvítt lín">
+        </figure>
+      </div>
+      <div class="choices">
+        <a href="#fyrirtaeki"><strong>Fyrir fyrirtæki</strong><span>Lín, dúkar og mottur</span><i aria-hidden="true">↘</i></a>
+        <a href="#verdskra"><strong>Fyrir einstaklinga</strong><span>Fatahreinsun og verð</span><i aria-hidden="true">↘</i></a>
+      </div>
+    </section>
+
+    <section class="services wrap" id="fyrirtaeki" aria-labelledby="service-heading">
+      <div class="split-head"><h2 id="service-heading">Fyrirtæki</h2><p>Fáðu lín frá Fönn eða láttu okkur þvo það sem þú átt. Við sækjum og sendum eftir samkomulagi.</p></div>
+      <div class="tabs" role="tablist" aria-label="Fyrirtækjaþjónusta">
+        <button role="tab" type="button" id="tab-lin" aria-controls="service" aria-selected="true">Lín og þvottur</button>
+        <button role="tab" type="button" id="tab-dukar" aria-controls="service" aria-selected="false" tabindex="-1">Dúkaleiga</button>
+        <button role="tab" type="button" id="tab-mottur" aria-controls="service" aria-selected="false" tabindex="-1">Mottuleiga</button>
+      </div>
+      <div class="service" id="service" role="tabpanel" aria-labelledby="tab-lin">
+        <figure class="service-image"><img id="service-image" src="assets/linen.jpg" width="360" height="146" alt="Samanbrotið hvítt lín"></figure>
+        <div class="service-copy">
+          <h3 id="service-name">Lín fyrir gististaði</h3>
+          <p id="service-description">Rúmföt og handklæði fyrir hótel og gististaði. Veldu leigu, þvott á eigin líni eða fáðu aðstoð við valið.</p>
+          <label for="service-choice">Hvað vantar þig?</label>
+          <select id="service-choice">
+            <option>Leigja lín</option><option>Þvo eigið lín</option><option>Óska eftir ráðgjöf</option>
+          </select>
+          <button class="button" id="quote-open" type="button">Óska eftir tilboði</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="workshop" aria-labelledby="workshop-heading">
+      <div class="workshop-media"><img src="assets/workshop.jpg" width="448" height="222" alt="Starfsmaður Fannar við röð þvottavéla" loading="lazy"></div>
+      <div class="workshop-copy">
+        <p class="label">Þvottahúsið</p>
+        <h2 id="workshop-heading">Frá 1960.</h2>
+        <p>Fönn byrjaði á skyrtuþvotti í bakhúsi við Fjólugötu. Í dag er þvottahúsið og afgreiðslan á Kletthálsi.</p>
+      </div>
+    </section>
+
+    <section id="verdskra" class="prices" aria-labelledby="price-heading">
+      <div class="wrap price-grid">
+        <div class="price-copy">
+          <p class="label">Fyrir einstaklinga</p>
+          <h2 id="price-heading">Fatahreinsun</h2>
+          <p>Komdu með flíkina í afgreiðsluna á Kletthálsi 13.</p>
+          <a href="#heimsokn">Sjá opnunartíma</a>
+          <img src="assets/shirts.jpg" width="448" height="299" alt="Skyrtur tilbúnar til afhendingar hjá Fönn" loading="lazy">
+        </div>
+        <div class="price-station">
+          <label for="price-search">Leita í verðskrá</label>
+          <input id="price-search" type="search" placeholder="T.d. kápa eða jakki" autocomplete="off">
+          <ul class="price-list" id="price-primary" aria-live="polite"></ul>
+          <div class="price-extra" id="price-extra" inert><ul class="price-list" id="price-secondary"></ul></div>
+          <button class="price-toggle" type="button" aria-controls="price-extra" aria-expanded="false">Sjá alla verðskrána <span aria-hidden="true">+</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews" aria-labelledby="reviews-heading">
+      <div class="wrap reviews-inner">
+        <div>
+          <h2 id="reviews-heading">Umsagnir</h2>
+          <p>Einkunn viðskiptavina á Google</p>
+        </div>
+        <div class="review-rating">
+          <p class="review-score">4,6 <span>af 5</span></p>
+          <span class="review-stars" aria-hidden="true"><span>★★★★★</span><span class="review-fill">★★★★★</span></span>
+        </div>
+        <a class="text-action" href="https://www.google.com/maps/search/?api=1&amp;query=F%C3%B6nn&amp;query_place_id=ChIJRfAC0ptz1kgRyy1-bQSYaGA" target="_blank" rel="noopener">Lesa umsagnir á Google <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="visit wrap" id="heimsokn" aria-labelledby="visit-heading">
+      <div class="visit-rule" aria-hidden="true"></div>
+      <div class="visit-info">
+        <p class="label">Heimsókn</p>
+        <h2 id="visit-heading">Klettháls 13</h2>
+        <p>110 Reykjavík</p>
+        <dl>
+          <div><dt>Afgreiðsla</dt><dd>Virka daga, 08:00–17:00</dd></div>
+          <div><dt>Skrifstofa</dt><dd>Virka daga, 08:00–16:00</dd></div>
+        </dl>
+        <div class="visit-links">
+          <a href="tel:+3545106300">510 6300</a>
+          <a href="mailto:fonn@thvottur.is">fonn@thvottur.is</a>
+        </div>
+      </div>
+      <div class="visit-map">
+        <div class="map-stage" id="map-stage">
+          <div class="map-preview">
+            <img src="assets/van.jpg" alt="Þjónustubíll Fannar" width="448" height="277" loading="lazy">
+          </div>
+          <div class="map-frame" id="map-frame" inert>
+            <iframe title="Kort af Fönn á Kletthálsi 13" referrerpolicy="strict-origin-when-cross-origin" data-src="https://www.google.com/maps?q=F%C3%B6nn%2C%20Kletth%C3%A1ls%2013%2C%20Reykjav%C3%ADk&amp;z=15&amp;output=embed"></iframe>
+          </div>
+          <button class="map-toggle" type="button" aria-expanded="false" aria-controls="map-frame" hidden>Sýna kort <span aria-hidden="true">+</span></button>
+        </div>
+        <a class="map-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Kletth%C3%A1ls+13%2C+Reykjav%C3%ADk&amp;destination_place_id=ChIJRfAC0ptz1kgRyy1-bQSYaGA" target="_blank" rel="noopener">
+          <span><strong>Fönn</strong><br>Klettháls 13</span>
+          <span class="text-action">Fá leiðarlýsingu <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap footer-main">
+      <img src="assets/fonn.png" width="62" height="41" alt="Fönn">
+      <span>Þvottahús og efnalaug</span>
+      <a class="back-top" href="#top">Efst á síðu ↑</a>
+    </div>
+    <div class="wrap footer-credit">
+      <a class="sndr-badge" href="https://sndrstudio.is" target="_blank" rel="noopener" aria-label="Hannað af SNDR Studio">
+        <span class="sndr-badge-mark" aria-hidden="true">SN<span class="sndr-badge-star">✦</span>DR</span>
+        <span class="sndr-badge-studio" aria-hidden="true">STUDIO</span>
+      </a>
+      <p>Frumgerð SNDR Studio að nýjum vef fyrir Fönn. Myndir og efni byggt á thvottur.is.</p>
+    </div>
+  </footer>
+
+  <dialog id="quote" aria-labelledby="quote-heading">
+    <div class="dialog-inner" tabindex="-1">
+      <button class="dialog-close" type="button" aria-label="Loka">×</button>
+      <p class="label">Fyrirtækjaþjónusta</p>
+      <h2 id="quote-heading">Óska eftir tilboði</h2>
+      <form id="quote-form">
+        <label>Þjónusta<select name="kind"></select></label>
+        <div class="form-row">
+          <label><span id="quantity-label">Fjöldi herbergja</span><input name="quantity" type="number" required min="1"></label>
+          <label>Staðsetning<input name="place" required autocomplete="address-level2"></label>
+        </div>
+        <label id="date-field" hidden>Óskadagur<input name="date" type="date" disabled></label>
+        <label>Netfang<input name="email" type="email" required autocomplete="email"></label>
+        <button class="button" type="submit">Yfirfara fyrirspurn</button>
+        <p class="form-note">Prufufyrirspurn. Gögnin verða ekki send.</p>
+      </form>
+      <div id="quote-review" hidden>
+        <dl id="quote-data"></dl>
+        <button class="button secondary" id="quote-edit" type="button">Breyta</button>
+        <button class="button" id="quote-done" type="button">Ljúka prufu</button>
+      </div>
+      <p id="quote-result" hidden role="status">Prufu lokið. Engin fyrirspurn var send.</p>
+    </div>
+  </dialog>
+</body>
+</html>
